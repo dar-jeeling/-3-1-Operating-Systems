@@ -12,4 +12,6 @@ xv6을 이용하여 프로젝트를 진행하였습니다.
 3. Stack Growth
 - pagefault handler를 구현하였다. 
 - rc2()를 호출해 page fault가 발생한 virtulal address를 결정하고, virtual address가 valid한 값인지 확인한다.
-4. Copy-on-Write (진행 중)
+4. Copy-on-Write
+- child process를 fork하게 되면 같은 메모리 공간을 공유하게 되는데, parent process가 데이터를 새로 넣거나 수정하거나 지우게 되면 같은 메모리 공간을 공유할 수 없게 되므로, parent process는 해당 page를 복사한 다음 수정한다. 이것이 바로 Copy-on-write 과정이다.
+- 
